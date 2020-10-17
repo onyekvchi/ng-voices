@@ -2,28 +2,95 @@
   <div class="container">
     <div class="c-section c-section--posters">
       <h2 class="c-section__title">Posters</h2>
-      <div class="c-posters">
-        <div class="c-poster">
-          <div class="c-poster__image u-radius-md"></div>
-          <div class="c-poster__actions">
+      <div class="c-columns">
+        <div class="c-column">
+          <div class="c-column__image u-radius-md"></div>
+          <div class="c-column__action">
             <button class="button">
               <span class="button__text">Download</span>
               <span class="button__icon"></span>
             </button>
           </div>
         </div>
-        <div class="c-poster">
-          <div class="c-poster__image u-radius-md"></div>
-          <div class="c-poster__actions">
+        <div class="c-column">
+          <div class="c-column__image u-radius-md"></div>
+          <div class="c-column__action">
             <button class="button">
               <span class="button__text">Download</span>
               <span class="button__icon"></span>
             </button>
           </div>
         </div>
-        <div class="c-poster">
-          <div class="c-poster__image u-radius-md"></div>
-          <div class="c-poster__actions">
+        <div class="c-column">
+          <div class="c-column__image u-radius-md"></div>
+          <div class="c-column__action">
+            <button class="button">
+              <span class="button__text">Download</span>
+              <span class="button__icon"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- VOICE NOTES -->
+    <div class="c-section c-section--voicenotes">
+      <h2 class="c-section__title">Voice notes</h2>
+      <div class="c-columns">
+        <div class="c-column">
+          <div class="c-column__audio u-radius-md"></div>
+          <div class="c-column__action">
+            <button class="button">
+              <span class="button__text">Download</span>
+              <span class="button__icon"></span>
+            </button>
+          </div>
+        </div>
+        <div class="c-column">
+          <div class="c-column__audio u-radius-md"></div>
+          <div class="c-column__action">
+            <button class="button">
+              <span class="button__text">Download</span>
+              <span class="button__icon"></span>
+            </button>
+          </div>
+        </div>
+        <div class="c-column">
+          <div class="c-column__audio u-radius-md"></div>
+          <div class="c-column__action">
+            <button class="button">
+              <span class="button__text">Download</span>
+              <span class="button__icon"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VOICE NOTES -->
+    <div class="c-section c-section--voicenotes">
+      <h2 class="c-section__title">Whatsapp Broadcasts</h2>
+      <div class="c-columns">
+        <div class="c-column">
+          <div class="c-column__text u-radius-md"></div>
+          <div class="c-column__action">
+            <button class="button">
+              <span class="button__text">Download</span>
+              <span class="button__icon"></span>
+            </button>
+          </div>
+        </div>
+        <div class="c-column">
+          <div class="c-column__text u-radius-md"></div>
+          <div class="c-column__action">
+            <button class="button">
+              <span class="button__text">Download</span>
+              <span class="button__icon"></span>
+            </button>
+          </div>
+        </div>
+        <div class="c-column">
+          <div class="c-column__text u-radius-md"></div>
+          <div class="c-column__action">
             <button class="button">
               <span class="button__text">Download</span>
               <span class="button__icon"></span>
@@ -42,18 +109,32 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.c-posters {
+.c-columns {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
 }
 
-.c-poster {
+.c-column {
   width: 32%;
   &__image {
     height: 300px;
-    margin-bottom: 15px;
     background-color: $color-gray;
+  }
+
+  &__audio {
+    height: 60px;
+    background-color: $color-gray;
+  }
+
+  &__text {
+    height: 500px;
+    border: 2px solid $color-gray;
+    background-color: white;
+  }
+
+  &__action {
+    margin-top: 15px;
   }
 }
 
