@@ -13,32 +13,29 @@
         </select>
         <img src="~/assets/images/icon-dropdown.svg" alt="" />
       </div>
-      <a href="https://endsars.com/" class="c-button">
+      <a href="https://endsars.com/" target="_blank" class="c-button">
         <span>endsars.com</span>
         <div class="c-button__icon">
           <img src="~/assets/images/icon-link.svg" alt="" />
         </div>
       </a>
     </div>
-
     <Nuxt />
   </div>
 </template>
 
 <style lang="scss">
-@import '~/assets/scss/core/_base.scss';
+@import '~/assets/scss/general/base.scss';
 
 .c-app {
-  width: 70vw;
-  margin: 0 auto;
-  position: relative;
+  width: $container-width-default;
 }
 
 .c-nav {
   position: fixed;
   padding: 30px 0px;
   font-size: 1.6rem;
-  width: 70vw;
+  width: $container-width-default;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -72,37 +69,6 @@
     img {
       position: absolute;
       right: 20px;
-    }
-  }
-
-  .c-button {
-    text-decoration: none;
-    color: black;
-    font-size: 1.4rem;
-    display: flex;
-    align-items: center;
-
-    &:hover {
-      img {
-        transform: translate(0%, 0%);
-      }
-    }
-
-    &__icon {
-      $scale: 23px;
-      background-color: $color-yellow;
-      margin-left: 10px;
-      border-radius: 4px;
-      width: $scale;
-      height: $scale;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        transform: translate(25%, -20%);
-        transition: transform 0.8s $easeOutExpo;
-      }
     }
   }
 }
