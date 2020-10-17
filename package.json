@@ -11,6 +11,7 @@
     "lint": "yarn lint:js"
   },
   "dependencies": {
+    "@nuxtjs/style-resources": "^1.0.0",
     "core-js": "^3.6.5",
     "node-sass": "^4.14.1",
     "nuxt": "^2.14.6",
