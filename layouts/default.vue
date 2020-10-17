@@ -39,7 +39,7 @@
 </template>
 
 <style lang="scss">
-@import '~/assets/scss/general/base.scss';
+@import '~/assets/scss/app.scss';
 
 .c-app {
   width: $container-width-default;

@@ -39,10 +39,7 @@ export default {
   build: {},
   styleResources: {
     scss: [
-      '~/assets/scss/core/_reset.scss',
-      '~/assets/scss/core/_variables.scss',
-      '~/assets/scss/core/_fonts.scss',
-      '~/assets/scss/core/_mixins.scss',
+      '~/assets/scss/global/variables.scss',
     ],
   },
 }

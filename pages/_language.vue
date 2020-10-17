@@ -139,7 +139,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .c-language {
   padding: 100px 0;
 }
