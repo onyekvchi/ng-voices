@@ -16,8 +16,7 @@ html {
   margin: 0;
 }
 
-select,
-button {
+select {
   outline: none;
 }
 
@@ -72,7 +71,7 @@ button {
   }
 
   &__icon {
-    $scale: 18px;
+    $scale: 17px;
     background-color: $color-yellow;
     margin-left: 10px;
     border-radius: 4px;
@@ -86,5 +85,29 @@ button {
       transform: translate(25%, -20%);
       transition: transform 0.5s $easeOutExpo;
     }
+  }
+}
+
+.c-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 470px;
+
+  select {
+    width: 100%;
+    font-size: 1.8rem;
+    padding: 12px 0px;
+    text-align-last: center;
+    border-radius: 10px;
+    border: solid 2px black;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-weight: normal;
+  }
+
+  svg {
+    position: absolute;
+    right: 20px;
   }
 }
