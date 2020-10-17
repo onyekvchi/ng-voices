@@ -42,6 +42,7 @@ export default {
       '~/assets/scss/core/_reset.scss',
       '~/assets/scss/core/_variables.scss',
       '~/assets/scss/core/_fonts.scss',
+      '~/assets/scss/core/_mixins.scss',
     ],
   },
 }

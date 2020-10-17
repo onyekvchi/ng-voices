@@ -93,7 +93,7 @@
         <div class="c-section__title">Whatsapp Broadcasts</div>
         <div class="c-columns">
           <div class="c-column">
-            <div class="c-column__text"></div>
+            <div class="c-column__text">{{ broadcast }}</div>
             <div class="c-column__action">
               <button class="button">
                 <span class="button__text">Share on Whatsapp</span>
@@ -102,7 +102,7 @@
             </div>
           </div>
           <div class="c-column">
-            <div class="c-column__text"></div>
+            <div class="c-column__text">{{ broadcast }}</div>
             <div class="c-column__action">
               <button class="button">
                 <span class="button__text">Share on Whatsapp</span>
@@ -111,7 +111,7 @@
             </div>
           </div>
           <div class="c-column">
-            <div class="c-column__text"></div>
+            <div class="c-column__text">{{ broadcast }}</div>
             <div class="c-column__action">
               <button class="button">
                 <span class="button__text">Share on Whatsapp</span>
@@ -128,6 +128,14 @@
 <script>
 export default {
   name: 'Language',
+  data() {
+    return {
+      broadcast: `Lorem ipsum dolor sit amet, 
+        consectetur adipisicing elit. Fuga modi veniam doloribus eum? 
+        Nihil in provident sunt quas exercitationem vero blanditiis, error 
+        cumque doloribus fuga, asperiores mollitia iste laboriosam architecto!`,
+    }
+  },
 }
 </script>
 
@@ -167,12 +175,16 @@ export default {
   }
 
   &__text {
-    height: 500px;
+    // height: 500px;
     border: 2px solid $color-gray;
     background-color: white;
     cursor: pointer;
     transition: all 300ms;
     border-radius: $radius-md;
+    padding: 15px;
+    font-size: 15px;
+    line-height: 24px;
+    font-family: Inter;
     &:hover {
       background: $color-gray;
     }
