@@ -7,7 +7,7 @@
         <div class="c-columns">
           <div class="c-column">
             <div class="c-column__image">
-              <img src="~/assets/images/posters/dummy/poster1.jpeg" alt="" />
+              <img src="~/assets/images/posters/dummy/poster1.jpeg" alt />
             </div>
             <div class="c-column__action">
               <button class="button">
@@ -18,7 +18,7 @@
           </div>
           <div class="c-column">
             <div class="c-column__image">
-              <img src="~/assets/images/posters/dummy/poster2.jpeg" alt="" />
+              <img src="~/assets/images/posters/dummy/poster2.jpeg" alt />
             </div>
             <div class="c-column__action">
               <button class="button">
@@ -29,7 +29,7 @@
           </div>
           <div class="c-column">
             <div class="c-column__image">
-              <img src="~/assets/images/posters/dummy/poster3.jpeg" alt="" />
+              <img src="~/assets/images/posters/dummy/poster3.jpeg" alt />
             </div>
             <div class="c-column__action">
               <button class="button">
@@ -45,7 +45,12 @@
         <div class="c-section__title">Voice notes</div>
         <div class="c-columns">
           <div class="c-column">
-            <div class="c-column__audio"></div>
+            <div class="c-column__audio">
+              <audio controls src="/media/cc0-audio/t-rex-roar.mp3">
+                Your browser does not support the
+                <code>audio</code> element.
+              </audio>
+            </div>
             <div class="c-column__action">
               <button class="button">
                 <span class="button__text">Download</span>
@@ -54,7 +59,12 @@
             </div>
           </div>
           <div class="c-column">
-            <div class="c-column__audio"></div>
+            <div class="c-column__audio">
+              <audio controls src="/media/cc0-audio/t-rex-roar.mp3">
+                Your browser does not support the
+                <code>audio</code> element.
+              </audio>
+            </div>
             <div class="c-column__action">
               <button class="button">
                 <span class="button__text">Download</span>
@@ -63,7 +73,12 @@
             </div>
           </div>
           <div class="c-column">
-            <div class="c-column__audio"></div>
+            <div class="c-column__audio">
+              <audio controls src="/media/cc0-audio/t-rex-roar.mp3">
+                Your browser does not support the
+                <code>audio</code> element.
+              </audio>
+            </div>
             <div class="c-column__action">
               <button class="button">
                 <span class="button__text">Download</span>
@@ -81,7 +96,7 @@
             <div class="c-column__text"></div>
             <div class="c-column__action">
               <button class="button">
-                <span class="button__text">Download</span>
+                <span class="button__text">Share on Whatsapp</span>
                 <span class="button__icon"></span>
               </button>
             </div>
@@ -90,7 +105,7 @@
             <div class="c-column__text"></div>
             <div class="c-column__action">
               <button class="button">
-                <span class="button__text">Download</span>
+                <span class="button__text">Share on Whatsapp</span>
                 <span class="button__icon"></span>
               </button>
             </div>
@@ -99,7 +114,7 @@
             <div class="c-column__text"></div>
             <div class="c-column__action">
               <button class="button">
-                <span class="button__text">Download</span>
+                <span class="button__text">Share on Whatsapp</span>
                 <span class="button__icon"></span>
               </button>
             </div>
@@ -142,6 +157,13 @@ export default {
   &__audio {
     height: 60px;
     background-color: $color-gray;
+    border-radius: $radius-md;
+
+    audio {
+      height: 100%;
+      width: 100%;
+      margin-top: -2px;
+    }
   }
 
   &__text {
