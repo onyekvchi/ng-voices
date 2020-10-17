@@ -46,8 +46,8 @@
 }
 
 .c-nav {
-  position: absolute;
-  padding: 30px 0px;
+  position: fixed;
+  padding: 15px 0px;
   font-size: 1.6rem;
   width: $container-width-default;
   font-weight: 600;
@@ -55,7 +55,8 @@
   align-items: center;
   justify-content: space-between;
   top: 0;
-
+  z-index: 2;
+  background: rgba($color-white, 0.975);
   &__logo {
     display: flex;
     align-items: center;

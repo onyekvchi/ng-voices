@@ -1,100 +1,108 @@
 <template>
-  <div class="container">
-    <!-- POSTERS -->
-    <div class="c-section c-section--posters">
-      <h2 class="c-section__title">Posters</h2>
-      <div class="c-columns">
-        <div class="c-column">
-          <div class="c-column__image u-radius-md"></div>
-          <div class="c-column__action">
-            <button class="button">
-              <span class="button__text">Download</span>
-              <span class="button__icon"></span>
-            </button>
+  <div class="c-language">
+    <div class="container">
+      <!-- POSTERS -->
+      <div class="c-section c-section--posters">
+        <div class="c-section__title">Posters</div>
+        <div class="c-columns">
+          <div class="c-column">
+            <div class="c-column__image">
+              <img src="~/assets/images/posters/dummy/poster1.jpeg" alt="" />
+            </div>
+            <div class="c-column__action">
+              <button class="button">
+                <span class="button__text">Download</span>
+                <span class="button__icon"></span>
+              </button>
+            </div>
           </div>
-        </div>
-        <div class="c-column">
-          <div class="c-column__image u-radius-md"></div>
-          <div class="c-column__action">
-            <button class="button">
-              <span class="button__text">Download</span>
-              <span class="button__icon"></span>
-            </button>
+          <div class="c-column">
+            <div class="c-column__image">
+              <img src="~/assets/images/posters/dummy/poster2.jpeg" alt="" />
+            </div>
+            <div class="c-column__action">
+              <button class="button">
+                <span class="button__text">Download</span>
+                <span class="button__icon"></span>
+              </button>
+            </div>
           </div>
-        </div>
-        <div class="c-column">
-          <div class="c-column__image u-radius-md"></div>
-          <div class="c-column__action">
-            <button class="button">
-              <span class="button__text">Download</span>
-              <span class="button__icon"></span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- VOICE NOTES -->
-    <div class="c-section c-section--voicenotes">
-      <h2 class="c-section__title">Voice notes</h2>
-      <div class="c-columns">
-        <div class="c-column">
-          <div class="c-column__audio u-radius-md"></div>
-          <div class="c-column__action">
-            <button class="button">
-              <span class="button__text">Download</span>
-              <span class="button__icon"></span>
-            </button>
-          </div>
-        </div>
-        <div class="c-column">
-          <div class="c-column__audio u-radius-md"></div>
-          <div class="c-column__action">
-            <button class="button">
-              <span class="button__text">Download</span>
-              <span class="button__icon"></span>
-            </button>
-          </div>
-        </div>
-        <div class="c-column">
-          <div class="c-column__audio u-radius-md"></div>
-          <div class="c-column__action">
-            <button class="button">
-              <span class="button__text">Download</span>
-              <span class="button__icon"></span>
-            </button>
+          <div class="c-column">
+            <div class="c-column__image">
+              <img src="~/assets/images/posters/dummy/poster3.jpeg" alt="" />
+            </div>
+            <div class="c-column__action">
+              <button class="button">
+                <span class="button__text">Download</span>
+                <span class="button__icon"></span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- BROADCASTS -->
-    <div class="c-section c-section--broadcasts">
-      <h2 class="c-section__title">Whatsapp Broadcasts</h2>
-      <div class="c-columns">
-        <div class="c-column">
-          <div class="c-column__text u-radius-md"></div>
-          <div class="c-column__action">
-            <button class="button">
-              <span class="button__text">Download</span>
-              <span class="button__icon"></span>
-            </button>
+      <!-- VOICE NOTES -->
+      <div class="c-section c-section--voicenotes">
+        <div class="c-section__title">Voice notes</div>
+        <div class="c-columns">
+          <div class="c-column">
+            <div class="c-column__audio"></div>
+            <div class="c-column__action">
+              <button class="button">
+                <span class="button__text">Download</span>
+                <span class="button__icon"></span>
+              </button>
+            </div>
+          </div>
+          <div class="c-column">
+            <div class="c-column__audio"></div>
+            <div class="c-column__action">
+              <button class="button">
+                <span class="button__text">Download</span>
+                <span class="button__icon"></span>
+              </button>
+            </div>
+          </div>
+          <div class="c-column">
+            <div class="c-column__audio"></div>
+            <div class="c-column__action">
+              <button class="button">
+                <span class="button__text">Download</span>
+                <span class="button__icon"></span>
+              </button>
+            </div>
           </div>
         </div>
-        <div class="c-column">
-          <div class="c-column__text u-radius-md"></div>
-          <div class="c-column__action">
-            <button class="button">
-              <span class="button__text">Download</span>
-              <span class="button__icon"></span>
-            </button>
+      </div>
+      <!-- BROADCASTS -->
+      <div class="c-section c-section--broadcasts">
+        <div class="c-section__title">Whatsapp Broadcasts</div>
+        <div class="c-columns">
+          <div class="c-column">
+            <div class="c-column__text"></div>
+            <div class="c-column__action">
+              <button class="button">
+                <span class="button__text">Download</span>
+                <span class="button__icon"></span>
+              </button>
+            </div>
           </div>
-        </div>
-        <div class="c-column">
-          <div class="c-column__text u-radius-md"></div>
-          <div class="c-column__action">
-            <button class="button">
-              <span class="button__text">Download</span>
-              <span class="button__icon"></span>
-            </button>
+          <div class="c-column">
+            <div class="c-column__text"></div>
+            <div class="c-column__action">
+              <button class="button">
+                <span class="button__text">Download</span>
+                <span class="button__icon"></span>
+              </button>
+            </div>
+          </div>
+          <div class="c-column">
+            <div class="c-column__text"></div>
+            <div class="c-column__action">
+              <button class="button">
+                <span class="button__text">Download</span>
+                <span class="button__icon"></span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -109,6 +117,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.c-language {
+  padding: 100px 0;
+}
+
 .c-columns {
   display: flex;
   flex-flow: row nowrap;
@@ -118,8 +130,13 @@ export default {
 .c-column {
   width: 32%;
   &__image {
-    height: 300px;
+    // height: 300px;
     background-color: $color-gray;
+    border-radius: $radius-lg;
+
+    img {
+      border-radius: $radius-lg;
+    }
   }
 
   &__audio {
@@ -132,6 +149,8 @@ export default {
     border: 2px solid $color-gray;
     background-color: white;
     cursor: pointer;
+    transition: all 300ms;
+    border-radius: $radius-md;
     &:hover {
       background: $color-gray;
     }
@@ -139,6 +158,31 @@ export default {
 
   &__action {
     margin-top: 15px;
+  }
+}
+
+.c-section {
+  padding: 60px 0;
+
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    display: inline-block;
+    position: relative;
+    letter-spacing: 0.2px;
+    &:after {
+      z-index: -1;
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      content: '';
+      height: 6px;
+      width: 100%;
+      background-color: $color-yellow;
+      border-radius: 2px;
+    }
   }
 }
 

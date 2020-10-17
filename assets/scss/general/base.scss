@@ -29,16 +29,6 @@ select {
   width: 100%;
 }
 
-.c-section {
-  padding: 60px 0;
-
-  &__title {
-    text-transform: uppercase;
-    margin-bottom: 30px;
-    font-size: 14px;
-  }
-}
-
 .u-radius-md {
   border-radius: $radius-md;
 }
@@ -96,11 +86,12 @@ select {
 
   select {
     width: 100%;
-    font-size: 1.8rem;
-    padding: 12px 0px;
+    font-size: 16px;
+    padding: 10px 0px;
     text-align-last: center;
     border-radius: 10px;
     border: solid 2px black;
+    background-color: $color-gray;
     -webkit-appearance: none;
     -moz-appearance: none;
     font-weight: normal;
