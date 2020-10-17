@@ -5,7 +5,7 @@
         <img src="~/assets/images/flag.svg" alt="logo" />
         <span>NG Voices</span>
       </div>
-      <div class="c-dropdown">
+      <div v-if="$route.name !== 'index'" class="c-dropdown">
         <select id="" name="">
           <option value="">Hausa</option>
           <option value="">Efik</option>
