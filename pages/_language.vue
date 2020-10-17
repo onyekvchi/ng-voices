@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <!-- POSTERS -->
     <div class="c-section c-section--posters">
       <h2 class="c-section__title">Posters</h2>
       <div class="c-columns">
@@ -65,9 +66,8 @@
         </div>
       </div>
     </div>
-
-    <!-- VOICE NOTES -->
-    <div class="c-section c-section--voicenotes">
+    <!-- BROADCASTS -->
+    <div class="c-section c-section--broadcasts">
       <h2 class="c-section__title">Whatsapp Broadcasts</h2>
       <div class="c-columns">
         <div class="c-column">
@@ -131,6 +131,10 @@ export default {
     height: 500px;
     border: 2px solid $color-gray;
     background-color: white;
+    cursor: pointer;
+    &:hover {
+      background: $color-gray;
+    }
   }
 
   &__action {
