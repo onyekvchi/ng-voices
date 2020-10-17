@@ -109,5 +109,6 @@ select {
   svg {
     position: absolute;
     right: 20px;
+    pointer-events: none;
   }
 }
