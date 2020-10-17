@@ -148,12 +148,19 @@ export default {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
+  @include small {
+    flex-flow: row wrap;
+  }
 }
 
 .c-column {
   width: 32%;
+  @include small {
+    width: 100%;
+    margin-bottom: 45px;
+  }
+
   &__image {
-    // height: 300px;
     background-color: $color-gray;
     border-radius: $radius-lg;
 
