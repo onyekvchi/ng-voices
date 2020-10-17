@@ -16,6 +16,11 @@ html {
   margin: 0;
 }
 
+select,
+button {
+  outline: none;
+}
+
 .c-app {
   max-width: 100%;
   margin: 0 auto;
@@ -48,6 +53,38 @@ html {
 }
 
 .container {
-  width: 960px;
+  width: $container-width-default;
   margin: auto;
+  position: relative;
+}
+
+.c-button {
+  text-decoration: none;
+  color: black;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    img {
+      transform: translate(0%, 0%);
+    }
+  }
+
+  &__icon {
+    $scale: 18px;
+    background-color: $color-yellow;
+    margin-left: 10px;
+    border-radius: 4px;
+    width: $scale;
+    height: $scale;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transform: translate(25%, -20%);
+      transition: transform 0.5s $easeOutExpo;
+    }
+  }
 }

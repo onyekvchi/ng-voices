@@ -11,7 +11,6 @@ export default {}
 <style lang="scss" scoped>
 .c-home {
   width: 100%;
-  height: 100vh;
   font-size: 1.6rem;
 }
 </style>
