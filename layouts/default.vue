@@ -4,7 +4,7 @@
       <div class="container">
         <div class="c-nav__inner">
           <nuxt-link to="/" class="c-nav__logo">
-            <img src="~/assets/images/flag.svg" alt="logo" />
+            <img src="~/assets/images/icons/flag.svg" alt="logo" />
             <span>NG Voices</span>
           </nuxt-link>
           <div v-if="$route.name !== 'index'" class="c-dropdown">
@@ -29,12 +29,11 @@
               />
             </svg>
           </div>
-          <a href="https://endsars.com/" target="_blank" class="c-button">
-            <span>endsars.com</span>
-            <div class="c-button__icon">
-              <img src="~/assets/images/icon-link.svg" alt />
-            </div>
-          </a>
+          <c-button
+            href="https://endsars.com"
+            text="endsars.com"
+            :link-out="true"
+          />
         </div>
       </div>
     </nav>
@@ -45,16 +44,13 @@
 <style lang="scss">
 @import '~/assets/scss/app.scss';
 
-.c-app {
-  // width: $container-width-default;
-}
-
 .c-nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 2;
+  background: rgba($color-white, 0.975);
 }
 
 .c-nav__inner {
@@ -65,7 +61,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba($color-white, 0.975);
 
   @include small {
     flex-flow: row wrap;

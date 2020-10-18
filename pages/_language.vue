@@ -10,10 +10,11 @@
               <img src="~/assets/images/posters/dummy/poster1.jpeg" alt />
             </div>
             <div class="c-column__action">
-              <button class="button">
-                <span class="button__text">Download</span>
-                <span class="button__icon"></span>
-              </button>
+              <c-button
+                href="https://endsars.com"
+                text="Download"
+                :link-out="true"
+              />
             </div>
           </div>
           <div class="c-column">
@@ -21,10 +22,11 @@
               <img src="~/assets/images/posters/dummy/poster2.jpeg" alt />
             </div>
             <div class="c-column__action">
-              <button class="button">
-                <span class="button__text">Download</span>
-                <span class="button__icon"></span>
-              </button>
+              <c-button
+                href="https://endsars.com"
+                text="Download"
+                :link-out="true"
+              />
             </div>
           </div>
           <div class="c-column">
@@ -32,10 +34,11 @@
               <img src="~/assets/images/posters/dummy/poster3.jpeg" alt />
             </div>
             <div class="c-column__action">
-              <button class="button">
-                <span class="button__text">Download</span>
-                <span class="button__icon"></span>
-              </button>
+              <c-button
+                href="https://endsars.com"
+                text="Download"
+                :link-out="true"
+              />
             </div>
           </div>
         </div>
@@ -52,10 +55,11 @@
               </audio>
             </div>
             <div class="c-column__action">
-              <button class="button">
-                <span class="button__text">Download</span>
-                <span class="button__icon"></span>
-              </button>
+              <c-button
+                href="https://endsars.com"
+                text="Download"
+                :link-out="true"
+              />
             </div>
           </div>
           <div class="c-column">
@@ -66,10 +70,11 @@
               </audio>
             </div>
             <div class="c-column__action">
-              <button class="button">
-                <span class="button__text">Download</span>
-                <span class="button__icon"></span>
-              </button>
+              <c-button
+                href="https://endsars.com"
+                text="Download"
+                :link-out="true"
+              />
             </div>
           </div>
           <div class="c-column">
@@ -80,10 +85,11 @@
               </audio>
             </div>
             <div class="c-column__action">
-              <button class="button">
-                <span class="button__text">Download</span>
-                <span class="button__icon"></span>
-              </button>
+              <c-button
+                href="https://endsars.com"
+                text="Download"
+                :link-out="true"
+              />
             </div>
           </div>
         </div>
@@ -216,37 +222,37 @@ export default {
     &:after {
       z-index: -1;
       position: absolute;
-      bottom: 1px;
+      bottom: 0px;
       left: 0;
       content: '';
-      height: 6px;
+      height: 10px;
       width: 100%;
-      background-color: $color-yellow;
+      background-color: rgba($color-green, 0.25);
       border-radius: 2px;
     }
   }
 }
 
-.button {
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  background: transparent;
-  cursor: pointer;
+// .button {
+//   border: none;
+//   padding: 10px;
+//   border-radius: 5px;
+//   display: flex;
+//   align-items: center;
+//   background: transparent;
+//   cursor: pointer;
 
-  &__text {
-    font-size: 14px;
-    font-weight: bold;
-  }
+//   &__text {
+//     font-size: 14px;
+//     font-weight: bold;
+//   }
 
-  &__icon {
-    margin-left: 10px;
-    height: 16px;
-    width: 16px;
-    background: $color-yellow;
-    border-radius: 100%;
-  }
-}
+//   &__icon {
+//     margin-left: 10px;
+//     height: 16px;
+//     width: 16px;
+//     background: $color-yellow;
+//     border-radius: 100%;
+//   }
+// }
 </style>
