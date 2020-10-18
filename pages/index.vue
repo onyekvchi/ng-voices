@@ -6,7 +6,13 @@
         <div class="c-home__title-line">#EndSARS to people in their</div>
         <div class="c-home__title-line">native languages.</div>
       </h1>
-      <c-dropdown class="c-dropdown" bg-color="black" color="white" />
+      <c-dropdown
+        class="c-dropdown"
+        bg-color="black"
+        color="white"
+        font-size="1.8rem"
+        padding="15px"
+      />
       <p class="c-home__subtext">
         Select a language and get voice notes, broadcast messages and posters in
         that language
@@ -163,15 +169,6 @@ export default {
     max-width: 100%;
     line-height: 2.1rem;
     --anim-duration: 1.4s;
-  }
-}
-</style>
-
-<style lang="scss">
-.c-dropdown {
-  select {
-    font-size: 1.8rem;
-    padding: 15px 0px;
   }
 }
 </style>

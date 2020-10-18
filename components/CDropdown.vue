@@ -1,7 +1,12 @@
 <template>
   <div class="c-dropdown">
     <select
-      :style="{ backgroundColor: `${bgColor}`, color: `${color}` }"
+      :style="{
+        backgroundColor: `${bgColor}`,
+        color: `${color}`,
+        fontSize: `${fontSize}`,
+        padding: `${padding}`,
+      }"
       @change="selectOption($event)"
     >
       <option value="hausa">Hausa</option>
@@ -38,6 +43,14 @@ export default {
     color: {
       type: String,
       default: 'black',
+    },
+    fontSize: {
+      type: String,
+      default: '1.6rem',
+    },
+    padding: {
+      type: String,
+      default: '10px',
     },
   },
   methods: {
