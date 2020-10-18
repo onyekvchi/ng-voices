@@ -8,7 +8,7 @@
             <span>NG Voices</span>
           </nuxt-link>
           <div v-if="$route.name !== 'index'" class="c-dropdown">
-            <select @change="selectOption(e)">
+            <select @change="selectOption($event)">
               <option value="hausa">Hausa</option>
               <option value="efik">Efik</option>
               <option value="nupe">Nupe</option>

@@ -7,8 +7,8 @@
         <div class="c-home__title-line">native languages.</div>
       </h1>
       <div class="c-dropdown">
-        <select id name>
-          <option disabled selected>Select a language to start</option>
+        <select @change="selectOption($event)">
+          <option value="hausa">Hausa</option>
           <option value="efik">Efik</option>
           <option value="nupe">Nupe</option>
         </select>
@@ -37,7 +37,16 @@
 </template>
 
 <script>
-export default {}
+export default {
+  methods: {
+    selectOption(event) {
+      const value = event.target.value
+      this.$router.push({
+        path: `/${value}`,
+      })
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped>
