@@ -26,18 +26,73 @@
         Select a language and get voice notes, broadcast messages and posters in
         that language
       </p>
+      <div ref="emojis" class="c-emojis"></div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      emojis: ['✊🏾', ' 📣', '🗣', '🚫'],
+      disabledEmojiList: [],
+    }
+  },
+  mounted() {
+    this.createEmojiList()
+  },
   methods: {
     selectOption(event) {
       const value = event.target.value
       this.$router.push({
         path: `/${value}`,
       })
+    },
+    createEmojiList() {
+      const emojiList = []
+      for (let index = 0; index < this.emojis.length; index++) {
+        for (let i = 0; i < 15; i++) {
+          const span = `<span>${this.emojis[index]}</span>`
+          emojiList.push(span)
+        }
+      }
+      this.$refs.emojis.innerHTML = emojiList.join(' ')
+      this.disabledEmojiList = Array.from(this.$refs.emojis.children)
+
+      setInterval(() => {
+        this.spawnEmoji()
+      }, 1000)
+    },
+    spawnEmoji() {
+      const x = Math.floor(Math.random() * 100)
+      const index = Math.floor(Math.random() * this.disabledEmojiList.length)
+      const emoji = this.disabledEmojiList[index]
+
+      this.disabledEmojiList.splice(index, 1)
+
+      const randomColor = `rgba(${Math.floor(
+        Math.random() * 256
+      )}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
+        Math.random() * 256
+      )}, 0.5)`
+
+      emoji.style.setProperty('--trans-duration', '0s')
+      emoji.style.setProperty('--opacity', '1')
+      emoji.style.setProperty('--trans-value', '0%')
+      // emoji.style.setProperty('--bottom', '-4rem')
+      emoji.style.left = `${x}%`
+      emoji.style.background = randomColor
+
+      setTimeout(() => {
+        emoji.style.setProperty('--trans-duration', '4s')
+        emoji.style.setProperty('--trans-value', '-600%')
+        emoji.style.setProperty('--opacity', '0')
+      }, 0)
+
+      setTimeout(() => {
+        this.disabledEmojiList.push(emoji)
+      }, 4000)
     },
   },
 }
@@ -198,6 +253,34 @@ export default {
     max-width: 100%;
     line-height: 2.1rem;
     --anim-duration: 1.4s;
+  }
+}
+
+.c-emojis {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+  font-size: 2.8rem;
+  z-index: -1;
+
+  span {
+    --trans-duration: 4s;
+    --trans-value: 0%;
+    --opacity: 1;
+    --bottom: -5rem;
+    position: absolute;
+    bottom: var(--bottom);
+    opacity: var(--opacity);
+    transform: translateY(var(--trans-value));
+    transition: var(--trans-duration) linear;
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 </style>
