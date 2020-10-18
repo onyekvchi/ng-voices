@@ -28,6 +28,10 @@
         later if you can't find yours now.
       </p>
     </div>
+
+    <a href="mailto:ngvoice1960@gmail.com" class="c-home__footer">
+      👉🏾 &nbsp; ngvoice1960@gmail.com &nbsp; 👈🏾
+    </a>
   </div>
 </template>
 
@@ -50,7 +54,7 @@ export default {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 200px;
+  margin-top: 180px;
   text-align: center;
 
   @keyframes slideup {
@@ -199,6 +203,21 @@ export default {
     max-width: 100%;
     line-height: 2.1rem;
     --anim-duration: 1.4s;
+  }
+
+  &__footer {
+    display: inline-block;
+    font-size: 1.4rem;
+    color: #000;
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
+    text-decoration: none;
+    color: $color-green;
   }
 }
 </style>
