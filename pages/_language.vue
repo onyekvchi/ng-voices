@@ -192,7 +192,6 @@ export default {
   }
 
   &__text {
-    // height: 500px;
     border: 2px solid $color-gray;
     background-color: white;
     cursor: pointer;
@@ -202,6 +201,7 @@ export default {
     font-size: 15px;
     line-height: 24px;
     font-family: Inter;
+    white-space: pre-wrap;
     &:hover {
       background: $color-gray;
     }
