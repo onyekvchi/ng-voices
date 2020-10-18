@@ -68,7 +68,6 @@ export default {}
     position: relative;
     text-align: center;
     display: inline-block;
-    width: fit-content;
 
     &:after {
       content: '';
