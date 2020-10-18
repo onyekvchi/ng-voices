@@ -30,7 +30,7 @@
       <a href="https://endsars.com/" target="_blank" class="c-button">
         <span>endsars.com</span>
         <div class="c-button__icon">
-          <img src="~/assets/images/icon-link.svg" alt="" />
+          <img src="~/assets/images/icon-link.svg" alt="button icon" />
         </div>
       </a>
     </nav>
