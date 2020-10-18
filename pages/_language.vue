@@ -11,10 +11,11 @@
             </div>
             <div class="c-column__action">
               <c-button
-                href="https://endsars.com"
+                :href="require('assets/images/posters/dummy/poster1.jpeg')"
                 text="Download"
                 icon="download"
                 :link-out="true"
+                download="poster1.jpeg"
               />
             </div>
           </div>
@@ -24,10 +25,11 @@
             </div>
             <div class="c-column__action">
               <c-button
-                href="https://endsars.com"
+                :href="require('assets/images/posters/dummy/poster2.jpeg')"
                 text="Download"
                 icon="download"
                 :link-out="true"
+                download="poster2.jpeg"
               />
             </div>
           </div>
@@ -37,10 +39,11 @@
             </div>
             <div class="c-column__action">
               <c-button
-                href="https://endsars.com"
+                :href="require('assets/images/posters/dummy/poster3.jpeg')"
                 text="Download"
                 icon="download"
                 :link-out="true"
+                download="poster3.jpeg"
               />
             </div>
           </div>
