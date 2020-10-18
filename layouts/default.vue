@@ -8,10 +8,10 @@
             <span>NG Voices</span>
           </nuxt-link>
           <div v-if="$route.name !== 'index'" class="c-dropdown">
-            <select id name>
-              <option value>Hausa</option>
-              <option value>Efik</option>
-              <option value>Nupe</option>
+            <select @change="selectOption(e)">
+              <option value="hausa">Hausa</option>
+              <option value="efik">Efik</option>
+              <option value="nupe">Nupe</option>
             </select>
             <svg
               width="14"
@@ -40,6 +40,20 @@
     <Nuxt />
   </div>
 </template>
+
+<script>
+export default {
+  name: 'Default',
+  methods: {
+    selectOption(event) {
+      const value = event.target.value
+      this.$router.push({
+        path: `/${value}`,
+      })
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 @import '~/assets/scss/app.scss';
@@ -72,7 +86,8 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: 470px;
+  width: 450px;
+  max-width: 100%;
 
   select {
     width: 100%;
@@ -92,7 +107,9 @@
     right: 20px;
     pointer-events: none;
   }
+}
 
+.c-nav .c-dropdown {
   @include small {
     order: 3;
     width: 100%;
