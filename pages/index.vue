@@ -24,10 +24,15 @@
       />
       <p class="c-home__subtext">
         Select a language and get voice notes, broadcast messages and posters in
-        that language
+        that language. Languages are updated regularly, so please come back
+        later if you can't find yours now.
       </p>
       <div ref="emojis" class="c-emojis"></div>
     </div>
+
+    <a href="mailto:ngvoice1960@gmail.com" class="c-home__footer">
+      👉🏾 &nbsp; ngvoice1960@gmail.com &nbsp; 👈🏾
+    </a>
   </div>
 </template>
 
@@ -104,7 +109,7 @@ export default {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 200px;
+  margin-top: 180px;
   text-align: center;
 
   @keyframes slideup {
@@ -249,10 +254,35 @@ export default {
   &__subtext {
     margin-top: 50px;
     font-size: 1.4rem;
-    width: 400px;
+    width: 450px;
     max-width: 100%;
     line-height: 2.1rem;
     --anim-duration: 1.4s;
+  }
+
+  &__footer {
+    display: inline-block;
+    font-size: 1.4rem;
+    color: #000;
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
+    text-decoration: none;
+    color: $color-green;
+
+    @include medium {
+      display: block;
+      text-align: center;
+      position: relative;
+      left: 0;
+      bottom: 0;
+      transform: none;
+      margin: 90px auto 60px;
+    }
   }
 }
 

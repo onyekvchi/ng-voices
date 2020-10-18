@@ -63,7 +63,8 @@ export default {
   transition: background-color 300ms;
 
   &:hover {
-    background-color: $color-gray;
+    background-color: rgba($color-green, 0.08);
+    .c-button__icon,
     img {
       transform: translate(0%, 0%);
     }
@@ -80,12 +81,14 @@ export default {
     border-radius: $radius-sm;
     width: $scale;
     height: $scale;
+    transform: translate(-2.5px, 3px);
+    transition: transform 0.5s $easeOutExpo;
 
     img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      transform: translate(25%, -20%);
+      transform: translate(5px, -4px);
       transition: transform 0.5s $easeOutExpo;
     }
 
