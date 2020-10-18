@@ -131,9 +131,14 @@ export default {
   methods: {
     setLanguage() {
       const languageParam = this.$route.params.language
-      this.language = languageData.find((language) => {
+      const language = languageData.find((language) => {
         return languageParam === language.name.toLowerCase()
       })
+      if (language) {
+        this.language = language
+      } else {
+        this.$router.push({ path: '/' })
+      }
     },
     showCopyAlert(e) {
       const node = e.target.parentNode
