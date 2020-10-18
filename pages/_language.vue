@@ -112,7 +112,9 @@
             <div class="c-column__text">{{ broadcast }}</div>
             <div class="c-column__action">
               <c-button
-                href="https://endsars.com"
+                :href="`https://api.whatsapp.com/send?text=${encodeURIComponent(
+                  broadcast
+                )}`"
                 text="Share on Whatsapp"
                 icon="whatsapp"
                 :link-out="true"
