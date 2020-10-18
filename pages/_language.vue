@@ -194,7 +194,7 @@ export default {
     border: 2px solid $color-gray;
     background-color: white;
     cursor: pointer;
-    transition: all 300ms $easeOutExpo;
+    transition: all 600ms;
     border-radius: $radius-md;
     padding: 15px;
     font-size: 15px;
@@ -217,7 +217,7 @@ export default {
       font: 1.4rem;
       opacity: 0;
       pointer-events: none;
-      transition: all 300ms ease-in-out;
+      transition: all 600ms;
     }
 
     pre {
