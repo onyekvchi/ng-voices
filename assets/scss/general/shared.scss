@@ -81,29 +81,3 @@ select {
     }
   }
 }
-
-.c-dropdown {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 470px;
-
-  select {
-    width: 100%;
-    font-size: 16px;
-    padding: 10px 0px;
-    text-align-last: center;
-    border-radius: 10px;
-    border: solid 2px black;
-    background-color: $color-gray;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    font-weight: normal;
-  }
-
-  svg {
-    position: absolute;
-    right: 20px;
-    pointer-events: none;
-  }
-}
