@@ -36,7 +36,18 @@ export default {
   modules: ['@nuxtjs/style-resources'],
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    extend(config, ctx) {
+      config.module.rules.push({
+        test: /\.(m4a|ogg|mp3|wav|mpe?g)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]'
+        }
+      })
+    }
+  },
+  
   styleResources: {
     scss: [
       '~/assets/scss/global/variables.scss',

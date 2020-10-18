@@ -1,3 +1,4 @@
+<!-- eslint-ignore -->
 <template>
   <div class="c-language">
     <div class="container">
@@ -42,7 +43,6 @@
                 :href="require('assets/images/posters/dummy/poster3.jpeg')"
                 text="Download"
                 icon="download"
-                :link-out="true"
                 download="poster3.jpeg"
               />
             </div>
@@ -53,51 +53,30 @@
       <div class="c-section c-section--voicenotes">
         <div class="c-section__title">Voice notes</div>
         <div class="c-columns">
-          <div class="c-column">
+          <div
+            v-for="(voicenote, index) in language.voicenotes"
+            :key="index"
+            class="c-column"
+          >
             <div class="c-column__audio">
-              <audio controls src="/media/cc0-audio/t-rex-roar.mp3">
+              <audio
+                controls
+                :src="
+                  require(`assets/data/audio/${language.name.toLowerCase()}/${voicenote}`)
+                "
+              >
                 Your browser does not support the
                 <code>audio</code> element.
               </audio>
             </div>
             <div class="c-column__action">
               <c-button
-                href="https://endsars.com"
+                :href="
+                  require(`assets/data/audio/${language.name.toLowerCase()}/${voicenote}`)
+                "
                 text="Download"
                 icon="download"
-                :link-out="true"
-              />
-            </div>
-          </div>
-          <div class="c-column">
-            <div class="c-column__audio">
-              <audio controls src="/media/cc0-audio/t-rex-roar.mp3">
-                Your browser does not support the
-                <code>audio</code> element.
-              </audio>
-            </div>
-            <div class="c-column__action">
-              <c-button
-                href="https://endsars.com"
-                text="Download"
-                icon="download"
-                :link-out="true"
-              />
-            </div>
-          </div>
-          <div class="c-column">
-            <div class="c-column__audio">
-              <audio controls src="/media/cc0-audio/t-rex-roar.mp3">
-                Your browser does not support the
-                <code>audio</code> element.
-              </audio>
-            </div>
-            <div class="c-column__action">
-              <c-button
-                href="https://endsars.com"
-                text="Download"
-                icon="download"
-                :link-out="true"
+                :download="voicenote"
               />
             </div>
           </div>
@@ -193,6 +172,7 @@ export default {
       height: 100%;
       width: 100%;
       margin-top: -2px;
+      outline: none;
     }
   }
 
