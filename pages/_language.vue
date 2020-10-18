@@ -167,11 +167,12 @@ export default {
     height: 60px;
     background-color: $color-gray;
     border-radius: $radius-md;
+    padding: 10px;
+    display: flex;
+    align-items: center;
 
     audio {
-      height: 100%;
       width: 100%;
-      margin-top: -2px;
       outline: none;
     }
   }
