@@ -3,15 +3,15 @@
     <div class="c-home">
       <h1 class="c-home__title">
         <div class="c-home__title-line">
-          <span>Spread awareness about</span>
+          <span>Spread awareness about the</span>
           <line />
         </div>
         <div class="c-home__title-line">
-          <span>#EndSARS to people in their</span>
+          <span>#EndSARS movement to people in</span>
           <line />
         </div>
         <div class="c-home__title-line">
-          <span>native languages.</span>
+          <span>their native languages.</span>
           <line />
         </div>
       </h1>
@@ -114,7 +114,7 @@ export default {
       z-index: 0;
 
       &::after {
-        content: 'Spread awareness about';
+        content: 'Spread awareness about the';
       }
     }
 
@@ -122,7 +122,7 @@ export default {
       z-index: 1;
 
       &::after {
-        content: '#EndSARS to people in their';
+        content: '#EndSARS movement to people in';
       }
     }
 
@@ -130,7 +130,7 @@ export default {
       z-index: 2;
 
       &::after {
-        content: 'native languages.';
+        content: 'their native languages.';
       }
     }
 

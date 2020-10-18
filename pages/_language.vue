@@ -91,7 +91,13 @@
             :key="index"
             class="c-column"
           >
-            <div class="c-column__text">{{ broadcast }}</div>
+            <div
+              v-clipboard="broadcast"
+              class="c-column__text"
+              @click="showCopyAlert($event)"
+            >
+              <pre>{{ broadcast }}</pre>
+            </div>
             <div class="c-column__action">
               <c-button
                 :href="`https://api.whatsapp.com/send?text=${encodeURIComponent(
@@ -128,6 +134,13 @@ export default {
       this.language = languageData.find((language) => {
         return languageParam === language.name.toLowerCase()
       })
+    },
+    showCopyAlert(e) {
+      const node = e.target.parentNode
+      node.classList.add('show-copy')
+      setTimeout(() => {
+        node.classList.remove('show-copy')
+      }, 1000)
     },
   },
 }
@@ -181,13 +194,35 @@ export default {
     border: 2px solid $color-gray;
     background-color: white;
     cursor: pointer;
-    transition: all 300ms;
+    transition: all 300ms $easeOutExpo;
     border-radius: $radius-md;
     padding: 15px;
     font-size: 15px;
     line-height: 24px;
     font-family: Inter;
-    white-space: pre-wrap;
+    position: relative;
+
+    &:after {
+      content: 'Copied!';
+      height: 100%;
+      width: 100%;
+      background-color: rgba($color-gray, 0.95);
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font: 1.4rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 300ms ease-in-out;
+    }
+
+    pre {
+      white-space: pre-wrap;
+    }
     &:hover {
       background: $color-gray;
     }
@@ -196,6 +231,10 @@ export default {
   &__action {
     margin-top: 15px;
   }
+}
+
+.c-column__text.show-copy:after {
+  opacity: 1;
 }
 
 .c-section {
