@@ -16,6 +16,7 @@
         </div>
       </div>
     </nav>
+    <div ref="emojis" class="c-emojis"></div>
     <Nuxt />
   </div>
 </template>
@@ -23,12 +24,82 @@
 <script>
 export default {
   name: 'Default',
-  methods: {},
+  data() {
+    return {
+      emojis: ['✊🏾', ' 📣', '🗣'],
+      disabledEmojiList: [],
+    }
+  },
+  mounted() {
+    this.createEmojiList()
+  },
+  methods: {
+    createEmojiList() {
+      const emojiList = []
+      for (let index = 0; index < this.emojis.length; index++) {
+        for (let i = 0; i < 20; i++) {
+          const span = `<span>${this.emojis[index]}</span>`
+          emojiList.push(span)
+        }
+      }
+      this.$refs.emojis.innerHTML = emojiList.join(' ')
+      this.disabledEmojiList = Array.from(this.$refs.emojis.children)
+
+      setInterval(() => {
+        this.spawnEmoji()
+      }, 1000)
+    },
+    spawnEmoji() {
+      const x = Math.floor(Math.random() * 100)
+      const index = Math.floor(Math.random() * this.disabledEmojiList.length)
+      const emoji = this.disabledEmojiList[index]
+
+      this.disabledEmojiList.splice(index, 1)
+
+      emoji.style.setProperty('--trans-duration', '0s')
+      emoji.style.setProperty('--opacity', '1')
+      emoji.style.setProperty('--trans-value', '0%')
+      emoji.style.setProperty('--bottom', '-4rem')
+      emoji.style.left = `${x}%`
+
+      setTimeout(() => {
+        emoji.style.setProperty('--trans-duration', '4s')
+        emoji.style.setProperty('--trans-value', '-600%')
+        emoji.style.setProperty('--opacity', '0')
+      }, 0)
+
+      setTimeout(() => {
+        this.disabledEmojiList.push(emoji)
+      }, 4000)
+    },
+  },
 }
 </script>
 
 <style lang="scss">
 @import '~/assets/scss/app.scss';
+
+.c-emojis {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+  font-size: 3rem;
+  z-index: -1;
+
+  span {
+    --trans-duration: 4s;
+    --trans-value: 0%;
+    --opacity: 1;
+    --bottom: -4rem;
+    position: absolute;
+    bottom: var(--bottom);
+    opacity: var(--opacity);
+    transform: translateY(var(--trans-value));
+    transition: var(--trans-duration) linear;
+  }
+}
 
 .c-nav {
   position: fixed;
