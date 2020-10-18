@@ -218,6 +218,16 @@ export default {
     font-weight: 600;
     text-decoration: none;
     color: $color-green;
+
+    @include medium {
+      display: block;
+      text-align: center;
+      position: relative;
+      left: 0;
+      bottom: 0;
+      transform: none;
+      margin: 90px auto 60px;
+    }
   }
 }
 </style>
