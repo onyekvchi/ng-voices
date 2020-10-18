@@ -1,5 +1,10 @@
 <template>
-  <a :href="href" :target="linkOut && '_blank'" class="c-button">
+  <a
+    :href="href"
+    :target="linkOut && '_blank'"
+    class="c-button"
+    :class="icon !== 'link' && 'c-button--circle'"
+  >
     <span class="c-button__text">{{ text }}</span>
     <div class="c-button__icon">
       <img
@@ -9,12 +14,12 @@
       />
       <img
         v-if="icon === 'download'"
-        src="~/assets/images/icons/icon-link.svg"
+        src="~/assets/images/icons/icon-download.svg"
         alt="download icon"
       />
       <img
         v-if="icon === 'whatsapp'"
-        src="~/assets/images/icons/icon-link.svg"
+        src="~/assets/images/icons/icon-whatsapp.svg"
         alt="whatsapp icon"
       />
     </div>
@@ -72,7 +77,7 @@ export default {
     $scale: 17px;
     background-color: $color-yellow;
     margin-left: 10px;
-    border-radius: 4px;
+    border-radius: $radius-sm;
     width: $scale;
     height: $scale;
 
@@ -82,6 +87,10 @@ export default {
       object-fit: contain;
       transform: translate(25%, -20%);
       transition: transform 0.5s $easeOutExpo;
+    }
+
+    .c-button--circle & {
+      border-radius: $radius-lg;
     }
   }
 }

@@ -13,6 +13,7 @@
               <c-button
                 href="https://endsars.com"
                 text="Download"
+                icon="download"
                 :link-out="true"
               />
             </div>
@@ -25,6 +26,7 @@
               <c-button
                 href="https://endsars.com"
                 text="Download"
+                icon="download"
                 :link-out="true"
               />
             </div>
@@ -37,6 +39,7 @@
               <c-button
                 href="https://endsars.com"
                 text="Download"
+                icon="download"
                 :link-out="true"
               />
             </div>
@@ -58,6 +61,7 @@
               <c-button
                 href="https://endsars.com"
                 text="Download"
+                icon="download"
                 :link-out="true"
               />
             </div>
@@ -73,6 +77,7 @@
               <c-button
                 href="https://endsars.com"
                 text="Download"
+                icon="download"
                 :link-out="true"
               />
             </div>
@@ -88,6 +93,7 @@
               <c-button
                 href="https://endsars.com"
                 text="Download"
+                icon="download"
                 :link-out="true"
               />
             </div>
@@ -96,33 +102,39 @@
       </div>
       <!-- BROADCASTS -->
       <div class="c-section c-section--broadcasts">
-        <div class="c-section__title">Whatsapp Broadcasts</div>
+        <div class="c-section__title">Broadcast Messages</div>
         <div class="c-columns">
           <div class="c-column">
             <div class="c-column__text">{{ broadcast }}</div>
             <div class="c-column__action">
-              <button class="button">
-                <span class="button__text">Share on Whatsapp</span>
-                <span class="button__icon"></span>
-              </button>
+              <c-button
+                href="https://endsars.com"
+                text="Share on Whatsapp"
+                icon="whatsapp"
+                :link-out="true"
+              />
             </div>
           </div>
           <div class="c-column">
             <div class="c-column__text">{{ broadcast }}</div>
             <div class="c-column__action">
-              <button class="button">
-                <span class="button__text">Share on Whatsapp</span>
-                <span class="button__icon"></span>
-              </button>
+              <c-button
+                href="https://endsars.com"
+                text="Share on Whatsapp"
+                icon="whatsapp"
+                :link-out="true"
+              />
             </div>
           </div>
           <div class="c-column">
             <div class="c-column__text">{{ broadcast }}</div>
             <div class="c-column__action">
-              <button class="button">
-                <span class="button__text">Share on Whatsapp</span>
-                <span class="button__icon"></span>
-              </button>
+              <c-button
+                href="https://endsars.com"
+                text="Share on Whatsapp"
+                icon="whatsapp"
+                :link-out="true"
+              />
             </div>
           </div>
         </div>
@@ -216,43 +228,21 @@ export default {
     margin-bottom: 30px;
     font-size: 16px;
     font-weight: 700;
-    display: inline-block;
+    display: block;
     position: relative;
     letter-spacing: 0.2px;
+    padding-left: 5px;
     &:after {
       z-index: -1;
       position: absolute;
-      bottom: 0px;
+      bottom: -2px;
       left: 0;
       content: '';
-      height: 10px;
+      height: 6px;
       width: 100%;
-      background-color: rgba($color-green, 0.25);
-      border-radius: 2px;
+      background-color: rgba($color-green, 0.12);
+      border-radius: $radius-sm;
     }
   }
 }
-
-// .button {
-//   border: none;
-//   padding: 10px;
-//   border-radius: 5px;
-//   display: flex;
-//   align-items: center;
-//   background: transparent;
-//   cursor: pointer;
-
-//   &__text {
-//     font-size: 14px;
-//     font-weight: bold;
-//   }
-
-//   &__icon {
-//     margin-left: 10px;
-//     height: 16px;
-//     width: 16px;
-//     background: $color-yellow;
-//     border-radius: 100%;
-//   }
-// }
 </style>
