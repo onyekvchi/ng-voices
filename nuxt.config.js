@@ -21,7 +21,7 @@ export default {
       { property: 'twitter:url', content: 'https://ngvoice.ng' },
       { property: 'twitter:title', content: 'NG Voice' },
       { property: 'twitter:description', content: 'Spread awareness about the #EndSARS movement to people in their native languages.' },
-      { property: 'twitter:image', content: '/twitter.png' },
+      { property: 'twitter:image', content: 'https://ngvoice.ng/twitter.png' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },

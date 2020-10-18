@@ -24,7 +24,8 @@
       />
       <p class="c-home__subtext">
         Select a language and get voice notes, broadcast messages and posters in
-        that language
+        that language. Languages are updated regularly, so please come back
+        later if you can't find yours now.
       </p>
     </div>
   </div>
@@ -194,7 +195,7 @@ export default {
   &__subtext {
     margin-top: 50px;
     font-size: 1.4rem;
-    width: 400px;
+    width: 450px;
     max-width: 100%;
     line-height: 2.1rem;
     --anim-duration: 1.4s;
