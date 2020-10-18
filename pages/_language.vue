@@ -154,6 +154,10 @@ export default {
 <style lang="scss">
 .c-language {
   padding: 100px 0;
+
+  @include small {
+    padding: 120px 0 60px;
+  }
 }
 
 .c-columns {
@@ -265,6 +269,10 @@ export default {
       background-color: rgba($color-green, 0.12);
       border-radius: $radius-sm;
     }
+  }
+
+  @include small {
+    padding: 30px 0;
   }
 }
 </style>
