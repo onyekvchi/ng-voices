@@ -75,8 +75,8 @@ export default {
     color: white;
 
     @include small {
-      font-size: 2.4rem;
-      line-height: 3.6rem;
+      font-size: 2rem;
+      line-height: 3.4rem;
     }
   }
 
