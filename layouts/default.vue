@@ -16,7 +16,7 @@
         </div>
       </div>
     </nav>
-    <div ref="emojis" class="c-emojis"></div>
+    <div v-if="$route.name === 'index'" ref="emojis" class="c-emojis"></div>
     <Nuxt />
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {
   name: 'Default',
   data() {
     return {
-      emojis: ['✊🏾', ' 📣', '🗣'],
+      emojis: ['✊🏾', ' 📣', '🗣', '🚫'],
       disabledEmojiList: [],
     }
   },
@@ -37,7 +37,7 @@ export default {
     createEmojiList() {
       const emojiList = []
       for (let index = 0; index < this.emojis.length; index++) {
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 15; i++) {
           const span = `<span>${this.emojis[index]}</span>`
           emojiList.push(span)
         }
@@ -56,11 +56,18 @@ export default {
 
       this.disabledEmojiList.splice(index, 1)
 
+      const randomColor = `rgba(${Math.floor(
+        Math.random() * 256
+      )}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
+        Math.random() * 256
+      )}, 0.5)`
+
       emoji.style.setProperty('--trans-duration', '0s')
       emoji.style.setProperty('--opacity', '1')
       emoji.style.setProperty('--trans-value', '0%')
       // emoji.style.setProperty('--bottom', '-4rem')
       emoji.style.left = `${x}%`
+      emoji.style.background = randomColor
 
       setTimeout(() => {
         emoji.style.setProperty('--trans-duration', '4s')
@@ -85,19 +92,25 @@ export default {
   height: 100vh;
   bottom: 0;
   left: 0;
-  font-size: 3rem;
+  font-size: 2.8rem;
   z-index: -1;
 
   span {
     --trans-duration: 4s;
     --trans-value: 0%;
     --opacity: 1;
-    --bottom: -4rem;
+    --bottom: -5rem;
     position: absolute;
     bottom: var(--bottom);
     opacity: var(--opacity);
     transform: translateY(var(--trans-value));
     transition: var(--trans-duration) linear;
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
