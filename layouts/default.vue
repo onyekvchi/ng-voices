@@ -59,7 +59,7 @@ export default {
       emoji.style.setProperty('--trans-duration', '0s')
       emoji.style.setProperty('--opacity', '1')
       emoji.style.setProperty('--trans-value', '0%')
-      emoji.style.setProperty('--bottom', '-4rem')
+      // emoji.style.setProperty('--bottom', '-4rem')
       emoji.style.left = `${x}%`
 
       setTimeout(() => {

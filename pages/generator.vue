@@ -2,19 +2,19 @@
   <div class="page">
     <form class="language-form">
       <div class="form-group">
-        <label for="name">Language</label>
-        <input id="name" v-model="newlanguage.name" type="text" />
+        <label>Language</label>
+        <input v-model="newlanguage.name" type="text" />
       </div>
       <div class="form-group">
-        <label for="name">Voicenotes</label>
+        <label>Voicenotes</label>
         <div class="columns">
-          <input id="name" v-model="newlanguage.voicenotes[0]" type="text" />
-          <input id="name" v-model="newlanguage.voicenotes[1]" type="text" />
-          <input id="name" v-model="newlanguage.voicenotes[2]" type="text" />
+          <input v-model="newlanguage.voicenotes[0]" type="text" />
+          <input v-model="newlanguage.voicenotes[1]" type="text" />
+          <input v-model="newlanguage.voicenotes[2]" type="text" />
         </div>
       </div>
       <div class="form-group">
-        <label for="name">Broadcasts</label>
+        <label>Broadcasts</label>
         <div class="columna">
           <textarea v-model="newlanguage.broadcasts[0]" rows="10" />
           <textarea v-model="newlanguage.broadcasts[1]" rows="10" />

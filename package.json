@@ -9,7 +9,7 @@
     "generate": "nuxt generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint": "yarn lint:js",
-    "deploy:staging": "yarn generate && cd dist && surge . --domain ngvoices.surge.sh"
+    "deploy:staging": "yarn generate && cd dist && surge . --domain https://ngvoices.surge.sh"
   },
   "dependencies": {
     "@nuxtjs/style-resources": "^1.0.0",
@@ -26,6 +26,7 @@
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-nuxt": "^1.0.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.1.2"
+    "prettier": "^2.1.2",
+    "v-clipboard": "^2.2.3"
   }
 }

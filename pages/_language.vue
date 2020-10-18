@@ -1,3 +1,4 @@
+<!-- eslint-ignore -->
 <template>
   <div class="c-language">
     <div class="container">
@@ -11,10 +12,11 @@
             </div>
             <div class="c-column__action">
               <c-button
-                href="https://endsars.com"
+                :href="require('assets/images/posters/dummy/poster1.jpeg')"
                 text="Download"
                 icon="download"
                 :link-out="true"
+                download="poster1.jpeg"
               />
             </div>
           </div>
@@ -24,10 +26,11 @@
             </div>
             <div class="c-column__action">
               <c-button
-                href="https://endsars.com"
+                :href="require('assets/images/posters/dummy/poster2.jpeg')"
                 text="Download"
                 icon="download"
                 :link-out="true"
+                download="poster2.jpeg"
               />
             </div>
           </div>
@@ -37,10 +40,10 @@
             </div>
             <div class="c-column__action">
               <c-button
-                href="https://endsars.com"
+                :href="require('assets/images/posters/dummy/poster3.jpeg')"
                 text="Download"
                 icon="download"
-                :link-out="true"
+                download="poster3.jpeg"
               />
             </div>
           </div>
@@ -50,51 +53,30 @@
       <div class="c-section c-section--voicenotes">
         <div class="c-section__title">Voice notes</div>
         <div class="c-columns">
-          <div class="c-column">
+          <div
+            v-for="(voicenote, index) in language.voicenotes"
+            :key="index"
+            class="c-column"
+          >
             <div class="c-column__audio">
-              <audio controls src="/media/cc0-audio/t-rex-roar.mp3">
+              <audio
+                controls
+                :src="
+                  require(`assets/data/audio/${language.name.toLowerCase()}/${voicenote}`)
+                "
+              >
                 Your browser does not support the
                 <code>audio</code> element.
               </audio>
             </div>
             <div class="c-column__action">
               <c-button
-                href="https://endsars.com"
+                :href="
+                  require(`assets/data/audio/${language.name.toLowerCase()}/${voicenote}`)
+                "
                 text="Download"
                 icon="download"
-                :link-out="true"
-              />
-            </div>
-          </div>
-          <div class="c-column">
-            <div class="c-column__audio">
-              <audio controls src="/media/cc0-audio/t-rex-roar.mp3">
-                Your browser does not support the
-                <code>audio</code> element.
-              </audio>
-            </div>
-            <div class="c-column__action">
-              <c-button
-                href="https://endsars.com"
-                text="Download"
-                icon="download"
-                :link-out="true"
-              />
-            </div>
-          </div>
-          <div class="c-column">
-            <div class="c-column__audio">
-              <audio controls src="/media/cc0-audio/t-rex-roar.mp3">
-                Your browser does not support the
-                <code>audio</code> element.
-              </audio>
-            </div>
-            <div class="c-column__action">
-              <c-button
-                href="https://endsars.com"
-                text="Download"
-                icon="download"
-                :link-out="true"
+                :download="voicenote"
               />
             </div>
           </div>
@@ -109,10 +91,18 @@
             :key="index"
             class="c-column"
           >
-            <div class="c-column__text">{{ broadcast }}</div>
+            <div
+              v-clipboard="broadcast"
+              class="c-column__text"
+              @click="showCopyAlert($event)"
+            >
+              <pre>{{ broadcast }}</pre>
+            </div>
             <div class="c-column__action">
               <c-button
-                href="https://endsars.com"
+                :href="`https://api.whatsapp.com/send?text=${encodeURIComponent(
+                  broadcast
+                )}`"
                 text="Share on Whatsapp"
                 icon="whatsapp"
                 :link-out="true"
@@ -144,6 +134,13 @@ export default {
       this.language = languageData.find((language) => {
         return languageParam === language.name.toLowerCase()
       })
+    },
+    showCopyAlert(e) {
+      const node = e.target.parentNode
+      node.classList.add('show-copy')
+      setTimeout(() => {
+        node.classList.remove('show-copy')
+      }, 1000)
     },
   },
 }
@@ -183,11 +180,13 @@ export default {
     height: 60px;
     background-color: $color-gray;
     border-radius: $radius-md;
+    padding: 10px;
+    display: flex;
+    align-items: center;
 
     audio {
-      height: 100%;
       width: 100%;
-      margin-top: -2px;
+      outline: none;
     }
   }
 
@@ -195,13 +194,35 @@ export default {
     border: 2px solid $color-gray;
     background-color: white;
     cursor: pointer;
-    transition: all 300ms;
+    transition: all 600ms;
     border-radius: $radius-md;
     padding: 15px;
     font-size: 15px;
     line-height: 24px;
     font-family: Inter;
-    white-space: pre-wrap;
+    position: relative;
+
+    &:after {
+      content: 'Copied!';
+      height: 100%;
+      width: 100%;
+      background-color: rgba($color-gray, 0.95);
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font: 1.4rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 600ms;
+    }
+
+    pre {
+      white-space: pre-wrap;
+    }
     &:hover {
       background: $color-gray;
     }
@@ -210,6 +231,10 @@ export default {
   &__action {
     margin-top: 15px;
   }
+}
+
+.c-column__text.show-copy:after {
+  opacity: 1;
 }
 
 .c-section {
