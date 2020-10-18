@@ -6,28 +6,7 @@
         <div class="c-home__title-line">#EndSARS to people in their</div>
         <div class="c-home__title-line">native languages.</div>
       </h1>
-      <div class="c-dropdown">
-        <select @change="selectOption($event)">
-          <option value="hausa">Hausa</option>
-          <option value="efik">Efik</option>
-          <option value="nupe">Nupe</option>
-        </select>
-        <svg
-          width="14"
-          height="10"
-          viewBox="0 0 14 10"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M2 2C3.36846 3.94705 5.13246 5.69884 6.44444 7.65887C7.18643 8.76735 8.93806 6.86489 9.47475 6.33847C10.1826 5.64418 12 3.54808 12 2.75452"
-            stroke="white"
-            stroke-width="3"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </div>
+      <c-dropdown class="c-dropdown" bg-color="black" color="white" />
       <p class="c-home__subtext">
         Select a language and get voice notes, broadcast messages and posters in
         that language
@@ -167,16 +146,14 @@ export default {
     // }
   }
 
-  .c-dropdown {
+  .c-dropdown,
+  &__subtext {
     opacity: 0;
-    --anim-duration: 1s;
+    animation: fadein var(--anim-duration) linear 2.4s forwards;
+  }
 
-    select {
-      background: black;
-      color: white;
-      font-size: 1.8rem;
-      padding: 15px 0px;
-    }
+  .c-dropdown {
+    --anim-duration: 1s;
   }
 
   &__subtext {
@@ -185,13 +162,16 @@ export default {
     width: 400px;
     max-width: 100%;
     line-height: 2.1rem;
-    opacity: 0;
     --anim-duration: 1.4s;
   }
+}
+</style>
 
-  .c-dropdown,
-  &__subtext {
-    animation: fadein var(--anim-duration) linear 2.4s forwards;
+<style lang="scss">
+.c-dropdown {
+  select {
+    font-size: 1.8rem;
+    padding: 15px 0px;
   }
 }
 </style>

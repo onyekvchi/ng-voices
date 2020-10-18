@@ -7,28 +7,7 @@
             <img src="~/assets/images/icons/flag.svg" alt="logo" />
             <span>NG Voices</span>
           </nuxt-link>
-          <div v-if="$route.name !== 'index'" class="c-dropdown">
-            <select @change="selectOption($event)">
-              <option value="hausa">Hausa</option>
-              <option value="efik">Efik</option>
-              <option value="nupe">Nupe</option>
-            </select>
-            <svg
-              width="14"
-              height="10"
-              viewBox="0 0 14 10"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M2 2C3.36846 3.94705 5.13246 5.69884 6.44444 7.65887C7.18643 8.76735 8.93806 6.86489 9.47475 6.33847C10.1826 5.64418 12 3.54808 12 2.75452"
-                stroke="black"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-          </div>
+          <c-dropdown v-if="$route.name !== 'index'" />
           <c-button
             href="https://endsars.com"
             text="endsars.com"
@@ -44,14 +23,7 @@
 <script>
 export default {
   name: 'Default',
-  methods: {
-    selectOption(event) {
-      const value = event.target.value
-      this.$router.push({
-        path: `/${value}`,
-      })
-    },
-  },
+  methods: {},
 }
 </script>
 
