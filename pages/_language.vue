@@ -104,29 +104,11 @@
       <div class="c-section c-section--broadcasts">
         <div class="c-section__title">Broadcast Messages</div>
         <div class="c-columns">
-          <div class="c-column">
-            <div class="c-column__text">{{ broadcast }}</div>
-            <div class="c-column__action">
-              <c-button
-                href="https://endsars.com"
-                text="Share on Whatsapp"
-                icon="whatsapp"
-                :link-out="true"
-              />
-            </div>
-          </div>
-          <div class="c-column">
-            <div class="c-column__text">{{ broadcast }}</div>
-            <div class="c-column__action">
-              <c-button
-                href="https://endsars.com"
-                text="Share on Whatsapp"
-                icon="whatsapp"
-                :link-out="true"
-              />
-            </div>
-          </div>
-          <div class="c-column">
+          <div
+            v-for="(broadcast, index) in language.broadcasts"
+            :key="index"
+            class="c-column"
+          >
             <div class="c-column__text">{{ broadcast }}</div>
             <div class="c-column__action">
               <c-button
@@ -144,15 +126,25 @@
 </template>
 
 <script>
+import languageData from '~/assets/data/languages.json'
+
 export default {
   name: 'Language',
   data() {
     return {
-      broadcast: `Lorem ipsum dolor sit amet, 
-        consectetur adipisicing elit. Fuga modi veniam doloribus eum? 
-        Nihil in provident sunt quas exercitationem vero blanditiis, error 
-        cumque doloribus fuga, asperiores mollitia iste laboriosam architecto!`,
+      language: {},
     }
+  },
+  mounted() {
+    this.setLanguage()
+  },
+  methods: {
+    setLanguage() {
+      const languageParam = this.$route.params.language
+      this.language = languageData.find((language) => {
+        return languageParam === language.name.toLowerCase()
+      })
+    },
   },
 }
 </script>
@@ -200,7 +192,6 @@ export default {
   }
 
   &__text {
-    // height: 500px;
     border: 2px solid $color-gray;
     background-color: white;
     cursor: pointer;
@@ -210,6 +201,7 @@ export default {
     font-size: 15px;
     line-height: 24px;
     font-family: Inter;
+    white-space: pre-wrap;
     &:hover {
       background: $color-gray;
     }

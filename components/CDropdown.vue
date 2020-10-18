@@ -9,9 +9,17 @@
       }"
       @change="selectOption($event)"
     >
-      <option value="hausa">Hausa</option>
-      <option value="efik">Efik</option>
-      <option value="nupe">Nupe</option>
+      <option value="" :selected="currentLanguage == ''" disabled>
+        Select a language to start
+      </option>
+      <option
+        v-for="language in languages"
+        :key="language.name"
+        :value="language.name.toLowerCase()"
+        :selected="currentLanguage === language.name.toLowerCase()"
+      >
+        {{ language.name }}
+      </option>
     </select>
     <svg
       class="c-dropdown__icon"
@@ -33,6 +41,8 @@
 </template>
 
 <script>
+import languageData from '~/assets/data/languages.json'
+
 export default {
   name: 'CDropdown',
   props: {
@@ -52,6 +62,24 @@ export default {
       type: String,
       default: '10px',
     },
+  },
+  data() {
+    return {
+      languages: [],
+    }
+  },
+  computed: {
+    currentLanguage() {
+      return this.$route.params.language || ''
+    },
+  },
+  mounted() {
+    const sortedData = languageData.sort((one, two) => {
+      if (one.name > two.name) return 1
+      else if (one.name < two.name) return -1
+      else return 0
+    })
+    this.languages = sortedData
   },
   methods: {
     selectOption(event) {
