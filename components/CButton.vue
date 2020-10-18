@@ -63,7 +63,7 @@ export default {
   transition: background-color 300ms;
 
   &:hover {
-    background-color: rgba($color-green, 0.1);
+    background-color: rgba($color-green, 0.08);
     img {
       transform: translate(0%, 0%);
     }
