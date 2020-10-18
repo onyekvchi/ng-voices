@@ -46,7 +46,7 @@
 }
 
 .c-nav {
-  position: absolute;
+  position: fixed;
   padding: 30px 0px;
   font-size: 1.6rem;
   width: $container-width-default;
