@@ -215,7 +215,6 @@ export default {
     }
 
     line {
-      display: none;
       --anim-delay: 2.4s;
       position: absolute;
       left: 0%;
