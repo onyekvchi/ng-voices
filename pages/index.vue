@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       emojis: ['✊🏾', ' 📣', '🗣', '🚫', '🇳🇬'],
-      disabledEmojiList: [],
+      inactiveEmojiList: [],
     }
   },
   mounted() {
@@ -63,7 +63,7 @@ export default {
         }
       }
       this.$refs.emojis.innerHTML = emojiList.join(' ')
-      this.disabledEmojiList = Array.from(this.$refs.emojis.children)
+      this.inactiveEmojiList = Array.from(this.$refs.emojis.children)
 
       setInterval(() => {
         this.spawnEmoji()
@@ -71,10 +71,10 @@ export default {
     },
     spawnEmoji() {
       const x = Math.floor(Math.random() * 100)
-      const index = Math.floor(Math.random() * this.disabledEmojiList.length)
-      const emoji = this.disabledEmojiList[index]
+      const index = Math.floor(Math.random() * this.inactiveEmojiList.length)
+      const emoji = this.inactiveEmojiList[index]
 
-      this.disabledEmojiList.splice(index, 1)
+      this.inactiveEmojiList.splice(index, 1)
 
       const randomColor = `rgba(${Math.floor(
         Math.random() * 256
@@ -85,7 +85,7 @@ export default {
       emoji.style.setProperty('--trans-duration', '0s')
       emoji.style.setProperty('--opacity', '1')
       emoji.style.setProperty('--trans-value', '0%')
-      // emoji.style.setProperty('--bottom', '-4rem')
+      // emoji.style.setProperty('--bottom', '-5rem')
       emoji.style.left = `${x}%`
       emoji.style.background = randomColor
 
@@ -96,7 +96,7 @@ export default {
       }, 0)
 
       setTimeout(() => {
-        this.disabledEmojiList.push(emoji)
+        this.inactiveEmojiList.push(emoji)
       }, 4000)
     },
   },
