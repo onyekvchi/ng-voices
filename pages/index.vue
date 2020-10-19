@@ -31,7 +31,7 @@
     </div>
 
     <a href="mailto:ngvoice1960@gmail.com" class="c-home__footer">
-      👉🏾 &nbsp; ngvoice1960@gmail.com &nbsp; 👈🏾
+      👉🏾&nbsp; ngvoices1960@gmail.com &nbsp;👈🏾
     </a>
   </div>
 </template>
