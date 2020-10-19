@@ -91,7 +91,7 @@ export default {
       '/tiv',
       '/urhobo',
       '/yala',
-      'yoruba',
+      '/yoruba',
     ],
   },
 }
