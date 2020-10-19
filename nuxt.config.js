@@ -12,16 +12,29 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Spread awareness about the #EndSARS movement to people in their native languages.' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Spread awareness about the #EndSARS movement to people in their native languages.',
+      },
       { property: 'og:type', content: 'website' },
       { property: 'og:url', content: 'http://ngvoice.ng' },
       { property: 'og:title', content: 'NG Voices' },
       { property: 'og:image', content: 'http://ngvoices.ng/twitter.png' },
-      { property: 'og:description', content: 'Spread awareness about the #EndSARS movement to people in their native languages.' },
+      {
+        property: 'og:description',
+        content:
+          'Spread awareness about the #EndSARS movement to people in their native languages.',
+      },
       { property: 'twitter:card', content: 'summary_large_image' },
       { property: 'twitter:url', content: 'http://ngvoices.ng' },
       { property: 'twitter:title', content: 'NG Voice' },
-      { property: 'twitter:description', content: 'Spread awareness about the #EndSARS movement to people in their native languages.' },
+      {
+        property: 'twitter:description',
+        content:
+          'Spread awareness about the #EndSARS movement to people in their native languages.',
+      },
       { property: 'twitter:image', content: 'http://ngvoices.ng/twitter.png' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
@@ -52,16 +65,33 @@ export default {
         test: /\.(m4a|ogg|mp3|wav|mpe?g)$/i,
         loader: 'file-loader',
         options: {
-          name: '[path][name].[ext]'
-        }
+          name: '[path][name].[ext]',
+        },
       })
-    }
+    },
   },
-  
+
   styleResources: {
     scss: [
       '~/assets/scss/global/variables.scss',
       '~/assets/scss/global/mixins.scss',
+    ],
+  },
+  generate: {
+    routes: [
+      '/english',
+      '/enuani',
+      '/esan',
+      '/hausa',
+      '/igbo',
+      '/ika',
+      '/jukun',
+      '/nupe',
+      '/pidgin',
+      '/tiv',
+      '/urhobo',
+      '/yala',
+      'yoruba',
     ],
   },
 }
