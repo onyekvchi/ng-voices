@@ -11,7 +11,7 @@
           <line />
         </div>
         <div class="c-home__title-line">
-          <span>their native languages.</span>
+          <span>their native languages .</span>
           <line />
         </div>
       </h1>
@@ -57,7 +57,7 @@ export default {
     createEmojiList() {
       const emojiList = []
       for (let index = 0; index < this.emojis.length; index++) {
-        for (let i = 0; i < 15; i++) {
+        for (let i = 0; i < 10; i++) {
           const span = `<span>${this.emojis[index]}</span>`
           emojiList.push(span)
         }
@@ -115,6 +115,8 @@ export default {
   @keyframes slideup {
     to {
       transform: translateY(0%);
+      -webkit-transform: translateY(0%);
+      -o-transform: translateY(0%);
     }
   }
 
@@ -132,11 +134,16 @@ export default {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    color: white;
+    color: transparent;
 
     @include small {
       font-size: 2rem;
       line-height: 3.4rem;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 5.2vw;
+      line-height: 3.2rem;
     }
   }
 
@@ -158,14 +165,21 @@ export default {
       height: 100%;
       background: white;
       transform: translateY(100%);
+      -webkit-transform: translateY(100%);
+      -o-transform: translateY(100%);
       z-index: 2;
     }
 
     &::after {
       color: black;
       position: absolute;
+      width: 100%;
+      height: 100%;
       left: 0;
+      bottom: 0;
       transform: translateY(100%);
+      -webkit-transform: translateY(100%);
+      -o-transform: translateY(100%);
       z-index: 1;
       animation: slideup 1.4s $easeOutExpo var(--anim-delay) forwards;
     }
