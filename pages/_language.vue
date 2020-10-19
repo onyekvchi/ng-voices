@@ -3,24 +3,35 @@
   <div class="c-language">
     <div class="container">
       <!-- POSTERS -->
-      <div class="c-section c-section--posters">
+      <div v-if="language.posters" class="c-section c-section--posters">
         <div class="c-section__title">Posters</div>
-        <div class="c-columns">
+        <div
+          v-for="(poster, index) in language.posters"
+          :key="index"
+          class="c-columns"
+        >
           <div class="c-column">
             <div class="c-column__image">
-              <img src="~/assets/images/posters/dummy/poster1.jpeg" alt />
+              <img
+                :src="
+                  require(`assets/data/posters/${language.name.toLowerCase()}/${poster}`)
+                "
+                :alt="poster"
+              />
             </div>
             <div class="c-column__action">
               <c-button
-                :href="require('assets/images/posters/dummy/poster1.jpeg')"
+                :href="
+                  require(`assets/data/posters/${language.name.toLowerCase()}/${poster}`)
+                "
                 text="Download"
                 icon="download"
                 :link-out="true"
-                download="poster1.jpeg"
+                :download="poster"
               />
             </div>
           </div>
-          <div class="c-column">
+          <!-- <div class="c-column">
             <div class="c-column__image">
               <img src="~/assets/images/posters/dummy/poster2.jpeg" alt />
             </div>
@@ -46,7 +57,7 @@
                 download="poster3.jpeg"
               />
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <!-- VOICE NOTES -->

@@ -1,6 +1,7 @@
 [
   {
     "name": "Enuani",
+    "posters": ["Enuani_Poster_1.jpg"],
     "voicenotes": [
       "Enuani_BC_1.m4a",
       "Enuani_BC_2.m4a",
@@ -40,6 +41,7 @@
   },
   {
     "name": "Ika",
+    "posters": ["Ika_Poster_1.jpg"],
     "voicenotes": [
       "Ika_BC_1.m4a",
       "Ika_BC_2.m4a",
@@ -66,6 +68,7 @@
   },
   {
     "name": "Yala",
+    "posters": ["Yala_Poster_1.jpg"],
     "voicenotes": [
       "Yala_BC_1.m4a",
       "Yala_BC_2.m4a",
@@ -105,6 +108,7 @@
   },
   {
     "name": "Pidgin",
+    "posters": ["Pidgin_Poster_1.jpg"],
     "voicenotes": [
       "Pidgin_BC 1.mp3",
       "Pidgin_BC 2.mp3",
@@ -118,6 +122,7 @@
   },
   {
     "name": "Igbo",
+    "posters": ["Igbo_Poster_1.jpg"],
     "voicenotes": [
       "Igbo_BC 1.mp3",
       "Igbo_BC 2.mp3",
