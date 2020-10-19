@@ -115,6 +115,8 @@ export default {
   @keyframes slideup {
     to {
       transform: translateY(0%);
+      -webkit-transform: translateY(0%);
+      -o-transform: translateY(0%);
     }
   }
 
@@ -132,7 +134,7 @@ export default {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    color: white;
+    color: transparent;
 
     @include small {
       font-size: 2rem;
@@ -163,14 +165,21 @@ export default {
       height: 100%;
       background: white;
       transform: translateY(100%);
+      -webkit-transform: translateY(100%);
+      -o-transform: translateY(100%);
       z-index: 2;
     }
 
     &::after {
       color: black;
       position: absolute;
+      width: 100%;
+      height: 100%;
       left: 0;
+      bottom: 0;
       transform: translateY(100%);
+      -webkit-transform: translateY(100%);
+      -o-transform: translateY(100%);
       z-index: 1;
       animation: slideup 1.4s $easeOutExpo var(--anim-delay) forwards;
     }
@@ -206,6 +215,7 @@ export default {
     }
 
     line {
+      display: none;
       --anim-delay: 2.4s;
       position: absolute;
       left: 0%;
