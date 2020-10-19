@@ -5,12 +5,12 @@
       <!-- POSTERS -->
       <div v-if="language.posters" class="c-section c-section--posters">
         <div class="c-section__title">Posters</div>
-        <div
-          v-for="(poster, index) in language.posters"
-          :key="index"
-          class="c-columns"
-        >
-          <div class="c-column">
+        <div class="c-columns">
+          <div
+            v-for="(poster, index) in language.posters"
+            :key="index"
+            class="c-column"
+          >
             <div class="c-column__image">
               <img
                 :src="
