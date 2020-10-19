@@ -9,7 +9,8 @@
     "generate": "nuxt generate",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint": "yarn lint:js",
-    "deploy:staging": "yarn generate && cd dist && surge . --domain https://ngvoices.surge.sh"
+    "deploy:staging": "yarn generate && cd dist && surge . --domain https://ngvoices.surge.sh",
+    "deploy:prod": "yarn generate && cd dist && surge . --domain https://ngvoices.ng"
   },
   "dependencies": {
     "@nuxtjs/style-resources": "^1.0.0",
