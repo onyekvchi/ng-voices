@@ -19,7 +19,7 @@ export default {
           'Spread awareness about the #EndSARS movement to people in their native languages.',
       },
       { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: 'https://ngvoice.ng' },
+      { property: 'og:url', content: 'https://ngvoices.ng' },
       { property: 'og:title', content: 'NG Voices' },
       { property: 'og:image', content: 'https://ngvoices.ng/twitter.png' },
       {
