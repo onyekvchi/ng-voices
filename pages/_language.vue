@@ -68,6 +68,7 @@
             v-for="(voicenote, index) in language.voicenotes"
             :key="index"
             class="c-column"
+            :class="isPSA(voicenote) && 'c-column--psa'"
           >
             <div class="c-column__audio">
               <audio
@@ -158,6 +159,9 @@ export default {
         node.classList.remove('show-copy')
       }, 1000)
     },
+    isPSA(fileName) {
+      return fileName.includes('PSA')
+    },
   },
 }
 </script>
@@ -173,7 +177,7 @@ export default {
 
 .c-columns {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-between;
   @include small {
     flex-flow: row wrap;
@@ -182,6 +186,27 @@ export default {
 
 .c-column {
   width: 32%;
+  margin-bottom: 30px;
+  position: relative;
+
+  &--psa:after {
+    content: 'PSA!';
+    position: absolute;
+    left: -8px;
+    top: -8px;
+    height: 20px;
+    // width: 40px;
+    padding: 0 5px;
+    background-color: #f10028;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 20px;
+    color: white;
+    font-weight: 700;
+    transform: rotate(-15deg);
+  }
+
   @include small {
     width: 100%;
     margin-bottom: 45px;
@@ -258,7 +283,7 @@ export default {
 }
 
 .c-section {
-  padding: 60px 0;
+  padding: 30px 0;
 
   &__title {
     text-transform: uppercase;
