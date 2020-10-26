@@ -94,6 +94,39 @@
           </div>
         </div>
       </div>
+
+      <!-- VIDEOS -->
+      <div
+        v-if="language.videos && language.videos.length > 0"
+        class="c-section c-section--voicenotes"
+      >
+        <div class="c-section__title">Videos</div>
+        <div class="c-columns">
+          <div
+            v-for="(video, index) in language.videos"
+            :key="index"
+            class="c-column"
+          >
+            <div class="c-column__video">
+              <VideoPlayer
+                :src="
+                  require(`assets/data/videos/${language.name.toLowerCase()}/${video}`)
+                "
+              />
+            </div>
+            <div class="c-column__action">
+              <c-button
+                :href="
+                  require(`assets/data/videos/${language.name.toLowerCase()}/${video}`)
+                "
+                text="Download"
+                icon="download"
+                :download="video"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- BROADCASTS -->
       <div class="c-section c-section--broadcasts">
         <div class="c-section__title">Broadcast Messages</div>
@@ -235,6 +268,30 @@ export default {
     }
   }
 
+  &__video {
+    background-color: $color-gray;
+    border-radius: $radius-md;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+
+    video {
+      width: 100%;
+      outline: none;
+    }
+    .video-js {
+      width: 100%;
+      height: 250px;
+      .vjs-big-play-button {
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        text-align: center;
+        top: 100px;
+      }
+    }
+  }
   &__text {
     border: 2px solid $color-gray;
     background-color: white;
