@@ -73,6 +73,7 @@ export default {
       const x = Math.floor(Math.random() * 100)
       const index = Math.floor(Math.random() * this.inactiveEmojiList.length)
       const emoji = this.inactiveEmojiList[index]
+      const transitionDuration = 4000
 
       this.inactiveEmojiList.splice(index, 1)
 
@@ -90,14 +91,17 @@ export default {
       emoji.style.background = randomColor
 
       setTimeout(() => {
-        emoji.style.setProperty('--trans-duration', '4s')
+        emoji.style.setProperty(
+          '--trans-duration',
+          `${transitionDuration / 1000}s`
+        )
         emoji.style.setProperty('--trans-value', '-600%')
         emoji.style.setProperty('--opacity', '0')
       }, 0)
 
       setTimeout(() => {
         this.inactiveEmojiList.push(emoji)
-      }, 4000)
+      }, transitionDuration)
     },
   },
 }
