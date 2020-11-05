@@ -37,7 +37,10 @@ export default {
       },
       { property: 'twitter:image', content: 'https://ngvoices.ng/twitter.png' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://vjs.zencdn.net/7.8.4/video-js.css' },
+    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
