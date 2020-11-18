@@ -29,8 +29,8 @@
       </p>
       <div ref="emojis" class="c-emojis"></div>
     </div>
-    <a href="mailto:ngvoice1960@gmail.com" class="c-home__footer">
-      👉🏾&nbsp; ngvoice1960@gmail.com &nbsp;👈🏾
+    <a href="mailto:ngvoices1960@gmail.com" class="c-home__footer">
+      👉🏾&nbsp; ngvoices1960@gmail.com &nbsp;👈🏾
     </a>
   </div>
 </template>
