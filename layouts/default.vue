@@ -8,11 +8,6 @@
             <span>NG Voices</span>
           </nuxt-link>
           <c-dropdown v-if="$route.name !== 'index'" />
-          <c-button
-            href="https://endsars.com"
-            text="endsars.com"
-            :link-out="true"
-          />
         </div>
       </div>
     </nav>
